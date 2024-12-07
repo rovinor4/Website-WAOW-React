@@ -9,6 +9,9 @@ import { ConfigProvider, theme } from 'antd'
 import Profile from './Pages/Profile.jsx'
 import Page404 from './Pages/Page404.jsx'
 import Category from './Pages/category.jsx'
+import Article from './Pages/article.jsx'
+import Dashboard from './Pages/Admin/Dashboard.jsx'
+import Index from './Pages/Admin/Index.jsx'
 
 createRoot(document.getElementById('root')).render(
   <ConfigProvider theme={{ token: { colorPrimary: "#373660" } }}>
@@ -21,7 +24,11 @@ createRoot(document.getElementById('root')).render(
           <Route path='/profile' element={<Profile />} />
           <Route path='/category' element={<Category />} />
           <Route path='/category/:uuid' element={<Category />} />
+          <Route path='/article/:uuid' element={<Article />} />
           <Route path='*' element={<Page404 />} />
+          <Route path='/admin' element={<Dashboard />}>
+            <Route path='/admin/dashboard' element={<Index />} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>

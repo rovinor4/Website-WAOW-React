@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "../Components/Nav";
 import LogoutController, { AuthController, UpdateProfileController } from "../Controller/User";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { Button, Flex, Image, Input } from "antd";
 import { Icon } from "@iconify/react/dist/iconify.js";
 
@@ -54,7 +54,9 @@ export default function Profile() {
                         <div>
                             {
                                 DataUser?.role &&
-                                <Button onClick={() => LogoutController(navigate)}>Buka Dashboard Admin</Button>
+                                <Link to={"/admin/dashboard"}>
+                                    <Button>Buka Dashboard Admin</Button>
+                                </Link>
                             }
                         </div>
                     </div>
