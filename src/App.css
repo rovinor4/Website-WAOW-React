@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    * {
+        font-family: "Poppins", serif !important;
+        font-style: normal !important;
+    }
+
+    img {
+        @apply object-cover object-center
+    }
+
+
+}
+
+@layer components {
+
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
